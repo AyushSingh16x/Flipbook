@@ -1,0 +1,14 @@
+body{font-family:sans-serif;margin:0;background:#111;color:#fff}
+.card{max-width:960px;margin:40px auto;padding:20px;background:#222;border-radius:8px}
+.book-item{display:flex;justify-content:space-between;align-items:center;
+  background:#333;margin:8px 0;padding:10px;border-radius:6px}
+button{background:#0b7cff;color:#fff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer}
+
+/* viewer */
+#viewer{max-width:1000px;margin:20px auto;position:relative;perspective:2000px}
+.page{width:480px;height:640px;position:absolute;top:0;left:50%;transform-style:preserve-3d;
+  transform-origin:left;transition:transform 1s cubic-bezier(.4,.2,.3,1);background:#000;}
+.page img{width:100%;height:100%;object-fit:contain;}
+.page.flipped{transform:rotateY(-180deg);}
+.controls{display:flex;justify-content:center;gap:10px;margin-top:20px;}
+.hotspot{position:absolute;border:2px solid rgba(0,255,255,0.3);cursor:pointer;}

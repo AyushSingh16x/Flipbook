@@ -1,0 +1,80 @@
+{
+  "name": "flipbooksample",
+  "path": "",
+  "type": "dir",
+  "children": [
+    {
+      "name": "Class 1",
+      "path": "Class 1",
+      "type": "dir",
+      "children": [
+        {
+          "name": "EVS",
+          "path": "Class 1/EVS",
+          "type": "dir",
+          "children": [
+            {
+              "name": "Chapter 2.pdf",
+              "path": "Class 1/EVS/Chapter 2.pdf",
+              "type": "file"
+            },
+            {
+              "name": "Chapter 3.pdf",
+              "path": "Class 1/EVS/Chapter 3.pdf",
+              "type": "file"
+            },
+            {
+              "name": "Chapter 4.pdf",
+              "path": "Class 1/EVS/Chapter 4.pdf",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "Maths",
+          "path": "Class 1/Maths",
+          "type": "dir",
+          "children": [
+            {
+              "name": "Chapter 3.pdf",
+              "path": "Class 1/Maths/Chapter 3.pdf",
+              "type": "file"
+            },
+            {
+              "name": "Chapter 5.pdf",
+              "path": "Class 1/Maths/Chapter 5.pdf",
+              "type": "file"
+            },
+            {
+              "name": "Chapter 8.pdf",
+              "path": "Class 1/Maths/Chapter 8.pdf",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "English",
+          "path": "Class 1/English",
+          "type": "dir",
+          "children": [
+            {
+              "name": "Chapter 1.pdf",
+              "path": "Class 1/English/Chapter 1.pdf",
+              "type": "file"
+            },
+            {
+              "name": "Chapter 2.pdf",
+              "path": "Class 1/English/Chapter 2.pdf",
+              "type": "file"
+            },
+            {
+              "name": "Chapter 3.pdf",
+              "path": "Class 1/English/Chapter 3.pdf",
+              "type": "file"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

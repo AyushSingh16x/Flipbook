@@ -1,0 +1,107 @@
+/* css/styles.css - minimal styles for index.html */
+body{font-family:Inter,system-ui,Arial,sans-serif;background:#f4f6f8;color:#111;margin:0;padding:20px}
+.card{max-width:1100px;margin:0 auto;background:#fff;padding:18px;border-radius:10px;box-shadow:0 8px 24px rgba(15,23,42,0.06)}
+h1{margin:0 0 6px}
+.muted{color:#6b7280;font-size:13px}
+.small{font-size:13px;color:#374151}
+.row{display:flex;gap:8px;align-items:center;margin-top:8px}
+input[type=text], input[type=file]{padding:8px;border-radius:8px;border:1px solid #e6e9ef}
+.btn{background:#0ea5a4;color:#fff;padding:10px 12px;border-radius:8px;border:0;cursor:pointer}
+.embedCard{margin-top:16px;padding:12px;border-radius:8px;border:1px solid #e6eef8;background:#061025;color:#eaf6ff}
+.embedHeader{font-size:14px;margin-bottom:6px}
+.hint{font-size:13px;color:#9aa4b2;margin-top:12px}
+/* ---------- Mobile-first compact controls: <=420px ---------- */
+@media (max-width:420px) {
+  /* Make book single-page and remove extra paddings */
+  .df-book-page { width: 100% !important; }
+  .df-book-stage { padding: 8px !important; }
+
+  /* Compact control bar: fixed at bottom, centered */
+  .df-ui-wrapper.df-ui-controls {
+    position: fixed !important;
+    left: 50% !important;
+    bottom: 10px !important;
+    transform: translateX(-50%) !important;
+    display: flex !important;
+    gap: 6px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(8,8,10,0.9) !important;
+    padding: 6px 8px !important;
+    border-radius: 12px !important;
+    z-index: 99999 !important;
+    width: auto !important;
+    max-width: calc(100% - 20px) !important;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35) !important;
+  }
+
+  /* Show only prev, page, next — hide everything else */
+  .df-ui-wrapper.df-ui-controls .df-ui-btn { display: none !important; }
+  .df-ui-wrapper.df-ui-controls .df-ui-prev,
+  .df-ui-wrapper.df-ui-controls .df-ui-page,
+  .df-ui-wrapper.df-ui-controls .df-ui-next {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Large tappable buttons */
+  .df-ui-wrapper.df-ui-controls .df-ui-prev,
+  .df-ui-wrapper.df-ui-controls .df-ui-next {
+    min-width: 56px !important;
+    min-height: 48px !important;
+    padding: 8px 10px !important;
+    font-size: 26px !important;
+    border-radius: 10px !important;
+    background: rgba(255,255,255,0.04) !important;
+    color: #fff !important;
+  }
+
+  /* Page field styling: compact and readable */
+  .df-ui-wrapper.df-ui-controls .df-ui-page {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    min-width: 86px !important;
+    padding: 6px 8px !important;
+    background: rgba(255,255,255,0.02) !important;
+    border-radius: 8px !important;
+  }
+  .df-ui-wrapper.df-ui-controls .df-ui-page input#df_book_page_number {
+    width: 46px !important;
+    padding: 6px !important;
+    border-radius: 6px !important;
+    background: rgba(255,255,255,0.06) !important;
+    color: #fff !important;
+    text-align: center !important;
+    z-index: 2 !important;
+    opacity: 1 !important;
+  }
+  .df-ui-wrapper.df-ui-controls .df-ui-page label[for="df_book_page_number"] {
+    color: #ddd !important;
+    font-size: 13px !important;
+    display: inline-block !important;
+  }
+
+  /* Disable pointer-events for hidden items to avoid accidental taps */
+  .df-ui-wrapper.df-ui-controls .df-ui-btn[style*="display: none"] { pointer-events: none !important; }
+
+  /* Improve visibility for prev/next when disabled */
+  .df-ui-wrapper.df-ui-controls .df-ui-btn.disabled {
+    opacity: 0.5 !important;
+    filter: grayscale(0.2) !important;
+  }
+
+  /* If page overlay exists, give room for controls so content isn't under it */
+  .df-book-stage { padding-bottom: 84px !important; } /* space for fixed controls */
+
+  /* Prevent text selection on buttons */
+  .df-ui-wrapper.df-ui-controls .df-ui-btn { user-select: none !important; -webkit-user-select: none !important; }
+
+  /* Quick accessibility: larger focus ring */
+  .df-ui-wrapper.df-ui-controls .df-ui-btn:focus {
+    outline: 3px solid rgba(0,200,180,0.18) !important;
+    outline-offset: 2px !important;
+  }
+}
+/* ---------- end mobile-only compact controls ---------- */

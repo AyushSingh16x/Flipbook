@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Flipbook Viewer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="dflip/css/dflip.min.css">
+
+  <style>
+    /* --- Base layout --- */
+    :root {
+      --accent1: #00fff7;
+      --accent2: #ff00f7;
+      --bg-dark: #0a0f1a;
+      --text-main: #e6eef8;
+      --text-sub: #94a3b8;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top left, #0a0f1a 0%, #05070e 100%);
+      color: var(--text-main);
+      font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    /* --- Header --- */
+    header {
+      width: 100%;
+      padding: 14px 20px;
+      background: linear-gradient(90deg, var(--accent1), var(--accent2));
+      color: #111;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      font-size: 18px;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(255,255,255,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: hueRotate 6s linear infinite;
+    }
+
+    @keyframes hueRotate {
+      from { filter: hue-rotate(0deg); }
+      to { filter: hue-rotate(360deg); }
+    }
+
+    /* --- Wrapper --- */
+    .wrap {
+      width: 90%;
+      max-width: 1100px;
+      margin-top: 30px;
+      padding: 25px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 0 15px rgba(0,255,247,0.1), 0 0 25px rgba(255,0,247,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* animated RGB border effect */
+    .wrap::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      z-index: -1;
+      background: linear-gradient(60deg, var(--accent1), var(--accent2), #00aaff, var(--accent1));
+      background-size: 400% 400%;
+      animation: rgbBorder 8s linear infinite;
+      border-radius: 14px;
+    }
+
+    @keyframes rgbBorder {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* --- Flipbook Container --- */
+    #viewerContainer {
+      border-radius: 8px;
+      overflow: hidden;
+      background: #0d1320;
+      padding: 10px;
+    }
+
+    /* --- Notes / subtle text --- */
+    .note {
+      font-size: 13px;
+      color: var(--text-sub);
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    /* --- Footer watermark --- */
+    footer {
+      margin-top: 25px;
+      font-size: 12px;
+      color: var(--text-sub);
+      letter-spacing: 1px;
+      opacity: 0.6;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <strong id="titleText">Flipbook Viewer</strong>
+  </header>
+
+  <div class="wrap">
+    <div id="viewerContainer">
+      <div class="_df_book" id="viewer_book" source=""></div>
+    </div>
+    <div class="note">Enjoy your interactive Flipbook experience ⚡</div>
+  </div>
+
+  <footer>©️ Adda247</footer>
+
+  <!-- jQuery local -->
+  <script src="dflip/js/libs/jquery.min.js"></script>
+  <!-- dflip local -->
+  <script src="dflip/js/dflip.min.js" data-dflip="1"></script>
+  <!-- viewer init -->
+  <script src="js/viewer-init.js"></script>
+</body>
+</html>
